@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>☀️ Mini-Solstice Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="stars"></div>
+<div class="planet planet1"></div>
+<div class="planet planet2"></div>
+<div class="orbit"></div>
+
+<div class="container">
+
+<header>
+
+<div class="logo" id="logoIcon">
+☀️
+</div>
+
+<h1>Mini-Solstice</h1>
+
+<p>250 кВт Күн Электр Станциясын Бақылау Панелі</p>
+
+<div id="clock" class="clock">
+00:00:00
+</div>
+
+<div id="dayMode" class="day-mode">
+☀️ DAY MODE
+</div>
+
+<div class="theme-switch">
+
+<button id="themeBtn">
+☀️ Light Theme
+</button>
+
+</div>
+
+</header>
+
+<!-- KPI CARDS -->
+
+<section class="cards">
+
+<div class="card">
+<h3>⚡ Қазіргі қуат</h3>
+<span id="currentPower">0 кВт</span>
+</div>
+
+<div class="card">
+<h3>🌡 Температура</h3>
+<span id="temperature">0°C</span>
+</div>
+
+<div class="card">
+<h3>☀️ Күн белсенділігі</h3>
+<span id="solarActivity">0%</span>
+</div>
+
+<div class="card">
+<h3>📡 Станция статусы</h3>
+<span id="stationStatus" class="online">
+ONLINE
+</span>
+</div>
+
+</section>
+
+<!-- WEATHER -->
+
+<section class="weather">
+
+<h2>🌤 Ауа райы</h2>
+
+<div class="weather-grid">
+
+<div class="weather-item">
+Температура
+<strong id="weatherTemp">0°C</strong>
+</div>
+
+<div class="weather-item">
+Бұлттылық
+<strong id="cloudiness">0%</strong>
+</div>
+
+<div class="weather-item">
+Ауа райы
+<strong id="weatherStatus">Күн ашық</strong>
+</div>
+
+<div class="weather-item">
+Жел
+<strong id="windSpeed">0 м/с</strong>
+</div>
+
+</div>
+
+</section>
+
+<!-- INVERTERS -->
+
+<section class="inverters">
+
+<h2>⚡ Инверторлар</h2>
+
+<div class="inverter-grid">
+
+<div class="inverter">
+<h3>Inverter #1</h3>
+<p>Status: <span class="online">Online</span></p>
+<p>Power: <span id="invPower1">0 кВт</span></p>
+<p>Temp: <span id="invTemp1">0°C</span></p>
+</div>
+
+<div class="inverter">
+<h3>Inverter #2</h3>
+<p>Status: <span class="online">Online</span></p>
+<p>Power: <span id="invPower2">0 кВт</span></p>
+<p>Temp: <span id="invTemp2">0°C</span></p>
+</div>
+
+<div class="inverter">
+<h3>Inverter #3</h3>
+<p>Status: <span class="online">Online</span></p>
+<p>Power: <span id="invPower3">0 кВт</span></p>
+<p>Temp: <span id="invTemp3">0°C</span></p>
+</div>
+
+<div class="inverter">
+<h3>Inverter #4</h3>
+<p>Status: <span class="online">Online</span></p>
+<p>Power: <span id="invPower4">0 кВт</span></p>
+<p>Temp: <span id="invTemp4">0°C</span></p>
+</div>
+
+<div class="inverter">
+<h3>Inverter #5</h3>
+<p>Status: <span class="online">Online</span></p>
+<p>Power: <span id="invPower5">0 кВт</span></p>
+<p>Temp: <span id="invTemp5">0°C</span></p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CHARTS -->
+
+<section class="charts">
+
+<h2>📈 Генерация графиктері</h2>
+
+<div class="charts-grid">
+
+<div class="chart-box">
+<canvas id="generationChart"></canvas>
+</div>
+
+<div class="chart-box">
+<canvas id="forecastChart"></canvas>
+</div>
+
+<div class="chart-box">
+<canvas id="temperatureChart"></canvas>
+</div>
+
+<div class="chart-box doughnut-box">
+<canvas id="efficiencyChart"></canvas>
+</div>
+
+</div>
+
+</section>
+
+<!-- AI -->
+
+<section class="ai-box">
+
+<h2>🤖 AI Analytics</h2>
+
+<div id="aiMessage">
+✅ Станция қалыпты режимде жұмыс істеуде.
+</div>
+
+</section>
+
+</div>
+
+<!-- NOTIFICATION -->
+
+<div id="notification" class="notification">
+Хабарлама
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
