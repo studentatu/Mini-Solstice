@@ -257,16 +257,33 @@ function updateDashboard(){
     aiMessage.innerHTML =
     recommendation;
 
+// ======================
+// EFFICIENCY UPDATE
+// ======================
+
+let efficiency =
+100
+- Math.floor(cloud * 0.15)
+- Math.floor(temp * 0.1);
+
+efficiency =
+Math.max(75, efficiency);
+
+let loss =
+100 - efficiency;
+
+efficiencyChart.data.datasets[0].data =
+[
+    efficiency,
+    loss
+];
+
+efficiencyChart.update();
+
     updateInverters();
 
 }
 
-updateDashboard();
-
-setInterval(
-updateDashboard,
-5000
-);
 
 // ======================
 // INVERTERS
@@ -516,7 +533,7 @@ text:"Уақыт (сағ)"
 // EFFICIENCY CHART
 // ======================
 
-new Chart(
+const efficiencyChart = new Chart(
     document.getElementById("efficiencyChart"),
     {
         type: "doughnut",
@@ -553,4 +570,16 @@ new Chart(
             }
         }
     }
+);
+
+
+// ======================
+// START APP
+// ======================
+
+updateDashboard();
+
+setInterval(
+    updateDashboard,
+    5000
 );
